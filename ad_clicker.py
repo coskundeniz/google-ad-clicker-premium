@@ -53,7 +53,7 @@ def get_arg_parser() -> ArgumentParser:
     arg_parser.add_argument("--date", help="Give a specific report date in DD-MM-YYYY format")
     arg_parser.add_argument("--excel", action="store_true", help="Write results to an Excel file")
     arg_parser.add_argument(
-        "--check_nowsecure", action="store_true", help="Check nowsecure.nl for undetection"
+        "--check_stealth", action="store_true", help="Check stealth for undetection"
     )
     arg_parser.add_argument("-d", "--device_id", help="Android device ID for assigning to browser")
 
@@ -143,11 +143,20 @@ def main():
 
     driver, country_code = create_webdriver(proxy, user_agent, plugin_folder_name)
 
-    if args.check_nowsecure:
+    if args.check_stealth:
         from time import sleep
+        from webdriver import execute_stealth_js_code
 
-        driver.get("https://nowsecure.nl/")
-        sleep(7 * config.behavior.wait_factor)
+        execute_stealth_js_code(driver)
+
+        driver.get("https://bot.sannysoft.com/")
+        sleep(5)
+        driver.get("https://browserleaks.com/canvas")
+        sleep(10)
+        driver.get("https://www.browserscan.net/")
+        sleep(15)
+        driver.get("https://pixelscan.net/bot-check")
+        sleep(30)
 
         driver.quit()
 

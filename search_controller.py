@@ -35,6 +35,7 @@ from utils import (
     resolve_redirect,
     boost_requests,
 )
+from webdriver import execute_stealth_js_code
 
 
 LinkElement = selenium.webdriver.remote.webelement.WebElement
@@ -248,6 +249,8 @@ class SearchController:
         :type links: AllLinks
         :param links: List of [(ad, ad_link, ad_title), non_ad_links]
         """
+
+        execute_stealth_js_code(self._driver)
 
         # store the ID of the original window
         original_window_handle = self._driver.current_window_handle

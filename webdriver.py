@@ -299,8 +299,6 @@ def create_webdriver(
         )
         _shift_window_position(driver, width, height)
 
-    _execute_stealth_js_code(driver)
-
     return (driver, country_code) if config.webdriver.country_domain else (driver, None)
 
 
@@ -401,8 +399,6 @@ def create_seleniumbase_driver(
         )
         _shift_window_position(driver, width, height)
 
-    _execute_stealth_js_code(driver)
-
     return (driver, country_code) if config.webdriver.country_domain else (driver, None)
 
 
@@ -484,7 +480,7 @@ def _get_driver_exe_path() -> str:
     return driver_exe_path
 
 
-def _execute_stealth_js_code(driver: Union[undetected_chromedriver.Chrome, seleniumbase.Driver]):
+def execute_stealth_js_code(driver: Union[undetected_chromedriver.Chrome, seleniumbase.Driver]):
     """Execute the stealth JS code to prevent detection
 
     Signature changes can be tested by loading the following addresses

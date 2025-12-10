@@ -404,7 +404,7 @@ def solve_recaptcha(
     if cookies:
         params["cookies"] = cookies
 
-    max_retry_count = 10
+    max_retry_count = 13
     request_retry_count = 0
 
     while request_retry_count < max_retry_count:
