@@ -45,7 +45,7 @@ This command-line tool clicks ads for a certain query on Google search using [un
 
 ## How to setup
 
-> ⚙️ If you want a ready to use [EXE for Windows](https://vimeo.com/1126408117), you can [buy it here](https://buy.stripe.com/5kQ7sMaIo07acWzdty4Ni0j). This will also help support the project.
+> ⚙️ If you want a ready to use [EXE for Windows](https://vimeo.com/1126408117), you can [buy it here](https://buy.stripe.com/3cI6oIg2I9HK3lZcpu4Ni0k). This will also help support the project.
 
 ---
 
