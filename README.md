@@ -157,6 +157,10 @@ The followings are the default values in the config file.
 
 * **auth**: Use proxy with username and password. If this is `true`, your proxies should be in `username:password@host:port` format
 
+    > **Important Note:** Starting from Chrome 142, Google removed `--load-extension` argument that disables the ability to install
+        plugins programmatically. Please make this parameter `false` and use your proxies in `IP:PORT` format with ip authentication
+        method by whitelisting your IP on your proxy provider. Otherwise, you won't be able to use authenticated proxies.
+
 * **incognito**: Run in incognito mode. Note that the proxy extension is not enabled in `incognito` mode.
 
 * **country_domain**: Set opening URL based on the proxy country.
